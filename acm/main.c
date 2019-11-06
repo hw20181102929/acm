@@ -1,15 +1,29 @@
-//
-//  main.c
-//  acm
-//
-//  Created by s20181102929 on 2019/11/6.
-//  Copyright © 2019 s20181102929. All rights reserved.
-//
-
 #include <stdio.h>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+#include <math.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        int min,max;
+        scanf("%d %d",&min,&max);
+        for(min;min<=max;min++)
+        {
+            int k=0;
+            for(int j=2;j<=sqrt(min);j++)
+            {
+                if(min%j==0&&min!=2)
+                {
+                    k=1;
+                    break;
+                }
+            }
+            if(k==0&&min>1)
+            {
+                printf("%d\n",min);
+            }
+        }
+    }
     return 0;
 }
